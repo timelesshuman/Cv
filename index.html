@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -20,7 +21,7 @@
                 margin: 0 !important; 
                 width: 100% !important; 
                 max-width: 100% !important; 
-                padding: 0.6cm 1cm !important; 
+                padding: 0.8cm 1.2cm !important; 
                 border-top: none !important;
             }
             .page-break { 
@@ -37,11 +38,11 @@
             color: #1d4ed8;
             letter-spacing: 0.05em;
             font-weight: 700;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
         }
         .profile-img-container {
-            width: 110px;
-            height: 110px;
+            width: 120px;
+            height: 120px;
             border: 3px solid #fff;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             overflow: hidden;
@@ -58,8 +59,16 @@
         .cv-mode { display: none; }
         .active-mode { display: block; }
         
-        .cv-text-base { font-size: 0.73rem; }
+        .cv-text-base { font-size: 0.75rem; }
         .cv-text-small { font-size: 0.65rem; }
+        .rating-badge {
+            background-color: #f3f4f6;
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-weight: 700;
+            color: #1d4ed8;
+            font-size: 0.7rem;
+        }
     </style>
 </head>
 <body class="p-4 md:p-10">
@@ -68,23 +77,23 @@
     <div class="no-print max-w-4xl mx-auto mb-6 bg-white p-6 rounded-xl border border-blue-200 shadow-lg">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
             <div class="flex flex-col gap-2">
-                <span class="text-xs font-bold text-blue-800 tracking-tighter">1. Özgeçmiş Modu</span>
+                <span class="text-xs font-bold text-blue-800">1. Özgeçmiş Modu</span>
                 <div class="inline-flex rounded-md shadow-sm">
-                    <button onclick="setMode('hr')" id="btn-mode-hr" class="px-4 py-2 text-[10px] font-bold text-white bg-blue-600 border border-blue-600 rounded-l-lg transition">İK & Organizasyonel Gelişim</button>
-                    <button onclick="setMode('sp')" id="btn-mode-sp" class="px-4 py-2 text-[10px] font-bold text-blue-600 bg-white border border-blue-600 rounded-r-lg hover:bg-blue-50 transition">Spor Psikoloğu</button>
+                    <button onclick="setMode('hr')" id="btn-mode-hr" class="px-4 py-2 text-[11px] font-bold text-white bg-blue-600 border border-blue-600 rounded-l-lg transition">İK & Organizasyonel Gelişim</button>
+                    <button onclick="setMode('sp')" id="btn-mode-sp" class="px-4 py-2 text-[11px] font-bold text-blue-600 bg-white border border-blue-600 rounded-r-lg hover:bg-blue-50 transition">Spor Psikoloğu</button>
                 </div>
             </div>
             <div class="flex flex-col gap-2">
-                <span class="text-xs font-bold text-blue-800 tracking-tighter">2. Dil Seçimi</span>
+                <span class="text-xs font-bold text-blue-800">2. Dil Seçimi</span>
                 <div class="inline-flex rounded-md shadow-sm">
-                    <button onclick="setLang('tr')" id="btn-tr" class="px-5 py-2 text-[10px] font-bold text-white bg-blue-600 border border-blue-600 rounded-l-lg transition">TÜRKÇE</button>
-                    <button onclick="setLang('en')" id="btn-en" class="px-5 py-2 text-[10px] font-bold text-blue-600 bg-white border border-blue-600 rounded-r-lg hover:bg-blue-50 transition">ENGLISH</button>
+                    <button onclick="setLang('tr')" id="btn-tr" class="px-5 py-2 text-[11px] font-bold text-white bg-blue-600 border border-blue-600 rounded-l-lg transition">Türkçe</button>
+                    <button onclick="setLang('en')" id="btn-en" class="px-5 py-2 text-[11px] font-bold text-blue-600 bg-white border border-blue-600 rounded-r-lg hover:bg-blue-50 transition">English</button>
                 </div>
             </div>
         </div>
         <div class="flex flex-col md:flex-row gap-4 items-center justify-between border-t pt-4">
             <div class="flex flex-col gap-1">
-                <span class="text-xs font-bold text-blue-800 tracking-tighter">3. Fotoğraf Yükle</span>
+                <span class="text-xs font-bold text-blue-800">3. Fotoğraf Yükle</span>
                 <input type="file" id="imageInput" accept="image/*" class="text-[10px] text-gray-500 cursor-pointer">
             </div>
             <button onclick="window.print()" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg shadow-xl transition-all font-bold text-sm">
@@ -98,58 +107,87 @@
         
         <!-- ================= İK MODU - TÜRKÇE ================= -->
         <div id="cv-hr-tr" class="cv-mode active-mode">
-            <div class="container-wrapper print-container max-w-4xl mx-auto bg-white shadow-2xl p-8 md:p-10 mb-4 border-t-8 border-blue-600">
-                <header class="pb-4 mb-6 border-b-2 border-gray-100 flex flex-col md:flex-row items-center md:items-start gap-8">
-                    <div class="flex-shrink-0"><div class="profile-img-container rounded-full"><img class="profile-preview hidden" src=""><div class="placeholder-text text-gray-400 text-[10px] text-center p-2 uppercase font-bold italic">FOTOĞRAF</div></div></div>
+            <div class="print-container max-w-4xl mx-auto bg-white shadow-2xl p-8 md:p-12 mb-4 border-t-8 border-blue-600">
+                <header class="pb-6 mb-6 border-b-2 border-gray-100 flex flex-col md:flex-row items-center md:items-start gap-8">
+                    <div class="flex-shrink-0">
+                        <div class="profile-img-container rounded-full"><img class="profile-preview hidden" src=""><div class="placeholder-text text-gray-400 text-[10px] text-center p-2 uppercase font-bold italic">FOTOĞRAF</div></div>
+                    </div>
                     <div class="flex-grow text-center md:text-left">
-                        <h1 class="text-2xl font-extrabold text-gray-900 tracking-tight leading-none uppercase">Yunus Emre Coşgun</h1>
-                        <p class="text-sm text-blue-600 font-semibold mt-1 tracking-wide">Psikolog | İK & Organizasyonel Gelişim Uzman Adayı</p>
+                        <h1 class="text-2xl font-extrabold text-gray-900 tracking-tight leading-none">Yunus Emre Coşgun</h1>
+                        <p class="text-base text-blue-600 font-semibold mt-1 tracking-wide">Psikolog | İnsan Kaynakları & Organizasyonel Gelişim</p>
                         <div class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-0.5 text-gray-600 font-medium text-[11px]">
                             <p>📞 0507 551 28 99</p><p>📧 yunusemrecosgun@hotmail.com</p><p>📍 İstanbul / Ankara</p><p>🔗 linkedin.com/in/yunusemrecosgun</p>
                         </div>
                     </div>
                 </header>
-                <section class="mb-6"><h2 class="section-title">Profesyonel Özet</h2><p class="cv-text-base leading-relaxed text-gray-700 text-justify">İnsan davranışı, motivasyon ve performans üzerine uzmanlaşmış bir psikoloğum. Türkiye'nin en büyük akademik topluluklarından biri olan <strong>TPÖÇG</strong> bünyesinde Yönetim Kurulu Üyeliği yaparak, 350+ kişilik bir organizasyonun uçtan uca İnsan Kaynakları süreçlerini yönettim. İşe alım, ekip koordinasyonu ve organizasyonel gelişim deneyimimi; kurumsal dünyada çalışan esenliği ve yüksek performanslı kültür inşası projelerine aktarmayı hedefliyorum.</p></section>
+                <section class="mb-6">
+                    <h2 class="section-title">Profesyonel Özet</h2>
+                    <p class="cv-text-base leading-relaxed text-gray-700 text-justify">İnsan davranışı, motivasyon ve performans üzerine uzmanlaşmış bir psikoloğum. Türkiye'nin en büyük akademik topluluklarından biri olan <strong>TPÖÇG</strong> bünyesinde Yönetim Kurulu Üyeliği yaparak, 350+ kişilik bir organizasyonun uçtan uca İnsan Kaynakları süreçlerini yönettim. İşe alım, ekip koordinasyonu ve organizasyonel gelişim deneyimimi; kurumsal dünyada çalışan esenliği, performans optimizasyonu ve yüksek performanslı kültür inşası projelerine aktarmayı hedefliyorum.</p>
+                </section>
                 <section class="mb-6">
                     <h2 class="section-title">Deneyim ve Liderlik</h2>
                     <div class="mb-4">
-                        <div class="flex justify-between items-baseline mb-0.5"><h3 class="text-[12px] font-bold text-gray-800">Yönetim Kurulu Üyesi & İnsan Kaynakları Koordinatörü</h3><span class="text-[10px] font-bold text-blue-600">2021 – 2022</span></div>
+                        <div class="flex justify-between items-baseline mb-0.5"><h3 class="text-[13px] font-bold text-gray-800">Yönetim Kurulu Üyesi & İnsan Kaynakları Koordinatörü</h3><span class="text-[11px] font-bold text-blue-600">2021 – 2022</span></div>
                         <p class="text-gray-500 font-bold mb-1 italic text-[10px]">TPÖÇG (Gönüllü)</p>
                         <ul class="list-disc ml-5 space-y-0.5 text-gray-700 cv-text-base">
                             <li>350+ kişilik toplulukta 5 farklı gönüllü ekibinin (30 personel) stratejik yönetimini ve koordinasyonunu gerçekleştirdi.</li>
                             <li>Tüm ekip üyeleri için mülakat, seçme-yerleştirme ve onboarding süreçlerini yürüterek yüksek motivasyonlu proje grupları oluşturdu.</li>
+                            <li>Organizasyonel hedeflerle uyumlu iç iletişim stratejileri geliştirerek departmanlar arası sinerjiyi artırdı.</li>
                         </ul>
                     </div>
                     <div class="mb-4">
-                        <div class="flex justify-between items-baseline mb-0.5"><h3 class="text-[12px] font-bold text-gray-800">Takım Psikoloğu</h3><span class="text-[10px] font-bold text-blue-600">06.2024 – 01.2025</span></div>
+                        <div class="flex justify-between items-baseline mb-0.5"><h3 class="text-[13px] font-bold text-gray-800">Takım Psikoloğu</h3><span class="text-[11px] font-bold text-blue-600">06.2024 – 01.2025</span></div>
                         <p class="text-gray-500 font-bold mb-1 italic text-[10px]">Pcific Esports & S2G Esports</p>
                         <ul class="list-disc ml-5 space-y-0.5 text-gray-700 cv-text-base">
                             <li>Stres yönetimi stratejileri ile çalışan performansını ve mental dayanıklılığını optimize etti.</li>
-                        <li>Açık iletişim ve pozitif geri bildirim kültürünü teşvik ederek sağlıklı ekip dinamikleri oluşturdu.</li>
-                        <li>İhtiyaca yönelik ekip eğitimleri (motivasyon, takım dinamikleri) gerçekleştirdi.</li>
-                    </ul>
-                </div>
-                <div class="mb-4">
-                    <div class="flex justify-between items-baseline mb-0.5"><h3 class="text-[12px] font-bold text-gray-800">Grafik Tasarım Takım Lideri</h3><span class="text-[10px] font-bold text-blue-600">06.2019 – 02.2021</span></div>
-                    <p class="text-gray-500 font-bold mb-1 italic text-[10px]">TPÖÇG (Gönüllü)</p>
-                    <ul class="list-disc ml-5 space-y-0.5 text-gray-700 cv-text-base"><li>Görsel içerik üretim süreçlerini yöneterek projelerin marka standartlarına uygunluğunu sağladı.</li></ul>
-                </div>
+                            <li>Açık iletişim ve pozitif geri bildirim kültürünü teşvik ederek sağlıklı takım dinamikleri oluşturdum.</li>
+                            <li>İhtiyaca yönelik ekip eğitimleri (motivasyon, takım dinamikleri) gerçekleştirdi.</li>
+                        </ul>
+                    </div>
                 </section>
-                <section><h2 class="section-title">Eğitim Bilgileri</h2><div class="mb-2"><h4 class="text-[12px] font-bold text-gray-800">Marmara Üniversitesi</h4><p class="text-gray-600 font-medium cv-text-small uppercase">Yüksek Lisans: Egzersiz ve Spor Psikolojisi (GPA: 3.88 / 4.00)</p></div></section>
+                <section>
+                    <h2 class="section-title">Eğitim Bilgileri</h2>
+                    <div class="flex justify-between items-baseline mb-2">
+                        <div><h4 class="text-[12px] font-bold text-gray-800">Marmara Üniversitesi</h4><p class="text-gray-600 font-medium cv-text-small uppercase">Yüksek Lisans: Egzersiz ve Spor Psikolojisi (GPA: 3.88 / 4.00)</p></div>
+                        <span class="text-[10px] font-bold text-blue-600 uppercase">Devam Ediyor</span>
+                    </div>
+                </section>
             </div>
-            <div class="page-break container-wrapper print-container max-w-4xl mx-auto bg-white shadow-2xl p-8 md:p-10 mb-8">
-                <section class="mb-6"><h2 class="section-title">Araştırma ve Saha Deneyimi</h2><div class="flex justify-between items-baseline"><h3 class="text-[12px] font-bold text-gray-800 uppercase">Saha Görevlisi / Veri Uzmanı</h3><span class="text-[10px] font-bold text-blue-600">2023</span></div><p class="cv-text-base">Hacettepe Üniversitesi Nüfus Etütleri Enstitüsü (UNFPA Destekli) bünyesinde ulusal araştırmada saha operasyonlarını yürüttü.</p></section>
-                <div class="grid grid-cols-2 gap-8 mb-8"><section><h2 class="section-title">Teknik Yetkinlikler</h2><ul class="space-y-1 cv-text-base text-gray-700"><li>Yetkinlik Bazlı Mülakat ●●●●●</li><li>Adobe Photoshop & Premiere ●●●●○</li><li>Sony Vegas Pro ●●●○○</li><li>MS Office (İleri Excel) ●●●●○</li></ul></section><section><h2 class="section-title">Dil Yetkinlikleri</h2><div class="space-y-1 cv-text-base"><div><strong>Türkçe:</strong> Ana Dil</div><div><strong>İngilizce:</strong> B2 - Üst Orta</div></div></section></div>
-                <section class="mb-8"><h2 class="section-title">Referanslar</h2><div class="grid grid-cols-2 gap-4"><div class="p-3 bg-blue-50 rounded border border-blue-100 text-[10px]"><strong>Özlem Yücel</strong><br>İç Eğitmen | psikologozlemyucel@gmail.com</div><div class="p-3 bg-blue-50 rounded border border-blue-100 text-[10px]"><strong>Ümit Beyazşekeroğlu</strong><br>Business Controller - Deloitte | ubeyazsekeroglu@deloitte.com</div></div></section>
+            <div class="page-break print-container max-w-4xl mx-auto bg-white shadow-2xl p-8 md:p-12 mb-8">
+                <section class="mb-6">
+                    <h2 class="section-title">Ekip Eğitimleri ve Atölye Kolaylaştırıcılığı</h2>
+                    <p class="cv-text-base leading-relaxed text-gray-700">Profesyonel takımlar için 100 saatin üzerinde <strong>ihtiyaca yönelik ekip eğitimleri</strong> (stres yönetimi, takımiçi dinamikler, motivasyon, odaklanma ve çatışma çözümü) gerçekleştirerek kurumsal verimliliğe katkıda bulundu.</p>
+                </section>
+                <section class="mb-6">
+                    <h2 class="section-title">Araştırma ve Saha Deneyimi</h2>
+                    <div class="mb-2">
+                        <div class="flex justify-between items-baseline"><h3 class="text-[13px] font-bold text-gray-800 uppercase">Saha Görevlisi / Veri Uzmanı</h3><span class="text-[11px] font-bold text-blue-600">2023</span></div>
+                        <p class="text-gray-500 font-bold mb-1 italic text-[10px]">Hacettepe Üniversitesi Nüfus Etütleri Enstitüsü (UNFPA Destekli)</p>
+                        <p class="cv-text-base">Ulusal araştırmada saha operasyonlarını ve veri toplama faaliyetlerini akademik standartlarda yürüttü.</p>
+                    </div>
+                </section>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-8">
+                    <section><h2 class="section-title">Teknik Yetkinlikler</h2><ul class="space-y-1.5 cv-text-base text-gray-700">
+                        <li class="flex justify-between border-b pb-0.5"><span>Yetkinlik Bazlı Mülakat</span> <span class="rating-badge">5/5</span></li>
+                        <li class="flex justify-between border-b pb-0.5"><span>Adobe Photoshop & Premiere</span> <span class="rating-badge">4/5</span></li>
+                        <li class="flex justify-between border-b pb-0.5"><span>Sony Vegas Pro</span> <span class="rating-badge">3/5</span></li>
+                        <li class="flex justify-between border-b pb-0.5"><span>MS Office (İleri Excel)</span> <span class="rating-badge">4/5</span></li>
+                    </ul></section>
+                    <section><h2 class="section-title">Dil Yetkinlikleri</h2><div class="space-y-2"><div class="flex justify-between"><span class="font-bold text-gray-800">Türkçe</span><span class="bg-blue-50 text-blue-600 px-2 rounded font-bold text-[10px]">ANA DİL</span></div><div class="flex justify-between"><span class="font-bold text-gray-800">İngilizce</span><span class="bg-blue-50 text-blue-600 px-2 rounded font-bold text-[10px]">B2 - ÜST ORTA</span></div></div></section>
+                </div>
+                <section><h2 class="section-title">Referanslar</h2><div class="grid grid-cols-2 gap-4">
+                    <div class="p-3 bg-blue-50 rounded border border-blue-100 text-[10px]"><strong>Özlem Yücel</strong><br>İç Eğitmen | psikologozlemyucel@gmail.com</div>
+                    <div class="p-3 bg-blue-50 rounded border border-blue-100 text-[10px]"><strong>Ümit Beyazşekeroğlu</strong><br>Business Controller - BPS Tax | Deloitte | ubeyazsekeroglu@deloitte.com</div>
+                </div></section>
             </div>
         </div>
 
         <!-- ================= İK MODU - İNGİLİZCE ================= -->
         <div id="cv-hr-en" class="cv-mode">
-            <div class="container-wrapper print-container max-w-4xl mx-auto bg-white shadow-2xl p-8 md:p-10 mb-4 border-t-8 border-blue-600">
+            <div class="print-container max-w-4xl mx-auto bg-white shadow-2xl p-8 md:p-10 mb-4 border-t-8 border-blue-600">
                 <header class="pb-4 mb-6 border-b-2 border-gray-100 flex flex-col md:flex-row items-center md:items-start gap-8">
                     <div class="flex-shrink-0"><div class="profile-img-container rounded-full"><img class="profile-preview hidden" src=""><div class="placeholder-text text-gray-400 text-[10px] text-center p-2 uppercase font-bold italic">PHOTO</div></div></div>
-                    <div class="flex-grow text-center md:text-left"><h1 class="text-2xl font-extrabold text-gray-900 tracking-tight leading-none uppercase">Yunus Emre Coşgun</h1><p class="text-sm text-blue-600 font-semibold mt-1 tracking-wide uppercase">Psychologist | Human Resources & Org. Development</p><div class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-0.5 text-gray-600 font-medium text-[11px]"><p>📞 +90 507 551 28 99</p><p>📧 yunusemrecosgun@hotmail.com</p><p>🔗 linkedin.com/in/yunusemrecosgun</p></div></div>
+                    <div class="flex-grow text-center md:text-left"><h1 class="text-2xl font-extrabold text-gray-900 leading-none uppercase">Yunus Emre Coşgun</h1><p class="text-sm text-blue-600 font-semibold mt-1 tracking-wide uppercase">Psychologist | Human Resources & Org. Development</p><div class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-0.5 text-gray-600 font-medium text-[11px]"><p>📞 +90 507 551 28 99</p><p>📧 yunusemrecosgun@hotmail.com</p><p>🔗 linkedin.com/in/yunusemrecosgun</p></div></div>
                 </header>
                 <section class="mb-6"><h2 class="section-title uppercase">Professional Summary</h2><p class="cv-text-base leading-relaxed text-gray-700 text-justify">Psychologist specialized in human behavior, motivation, and performance. Managed full lifecycle HR processes for over 350 members as a Board Member at <strong>TPÖÇG</strong>. Aiming to apply expertise in recruitment, team coordination, and well-being to build high-performance corporate cultures.</p></section>
                 <section class="mb-6">
@@ -158,22 +196,32 @@
                         <div class="flex justify-between items-baseline mb-0.5"><h3 class="text-[12px] font-bold text-gray-800 uppercase">Board Member & HR Coordinator</h3><span class="text-[11px] font-bold text-blue-600 uppercase">2021 – 2022</span></div>
                         <p class="text-gray-500 font-bold mb-1 italic text-[10px] uppercase">TPÖÇG (Volunteer)</p>
                         <ul class="list-disc ml-5 space-y-0.5 text-gray-700 cv-text-base">
-                            <li>Managed and coordinated 5 volunteer teams (30 personnel) for a 350-member organization.</li>
+                            <li>Strategically managed 5 volunteer teams (30 staff) for a community of 350+ members.</li>
                             <li>Executed end-to-end recruitment and onboarding to build high-performing project groups.</li>
                         </ul>
                     </div>
                 </section>
                 <section><h2 class="section-title uppercase">Academic Background</h2><div class="mb-2"><h4 class="text-[12px] font-bold text-gray-800 uppercase">Marmara University</h4><p class="text-gray-600 font-medium cv-text-small uppercase">M.Sc. in Exercise and Sport Psychology (GPA: 3.88 / 4.00)</p></div></section>
             </div>
-            <div class="page-break container-wrapper print-container max-w-4xl mx-auto bg-white shadow-2xl p-8 md:p-10 mb-8">
-                <div class="grid grid-cols-2 gap-8 mb-8"><section><h2 class="section-title uppercase">Technical Skills</h2><ul class="space-y-1 cv-text-base text-gray-700"><li>Competency-Based Interviewing ●●●●●</li><li>Adobe Creative Suite ●●●●○</li><li>MS Office (Advanced Excel) ●●●●○</li></ul></section><section><h2 class="section-title uppercase">Languages</h2><div class="space-y-1 cv-text-base"><div><strong>Turkish:</strong> Native</div><div><strong>English:</strong> B2 - Upper Intermediate</div></div></section></div>
-                <section><h2 class="section-title uppercase">References</h2><div class="grid grid-cols-2 gap-4"><div class="p-3 bg-blue-50 rounded border border-blue-100 text-[10px]"><strong>Özlem Yücel</strong><br>Internal Trainer | psikologozlemyucel@gmail.com</div><div class="p-3 bg-blue-50 rounded border border-blue-100 text-[10px]"><strong>Ümit Beyazşekeroğlu</strong><br>Business Controller - Deloitte | ubeyazsekeroglu@deloitte.com</div></div></section>
+            <div class="page-break print-container max-w-4xl mx-auto bg-white shadow-2xl p-8 md:p-10 mb-8">
+                <div class="grid grid-cols-2 gap-8 mb-8">
+                    <section><h2 class="section-title uppercase">Technical Skills</h2><ul class="space-y-1.5 cv-text-base text-gray-700">
+                        <li class="flex justify-between border-b pb-0.5"><span>Competency-Based Interviewing</span> <span class="rating-badge">5/5</span></li>
+                        <li class="flex justify-between border-b pb-0.5"><span>Adobe Creative Suite</span> <span class="rating-badge">4/5</span></li>
+                        <li class="flex justify-between border-b pb-0.5"><span>MS Office (Advanced Excel)</span> <span class="rating-badge">4/5</span></li>
+                    </ul></section>
+                    <section><h2 class="section-title uppercase">Languages</h2><div class="space-y-1 cv-text-base"><div><strong>Turkish:</strong> Native</div><div><strong>English:</strong> B2 - Upper Intermediate</div></div></section>
+                </div>
+                <section><h2 class="section-title uppercase">References</h2><div class="grid grid-cols-2 gap-4">
+                    <div class="p-3 bg-blue-50 rounded border border-blue-100 text-[10px]"><strong>Özlem Yücel</strong><br>Internal Trainer | psikologozlemyucel@gmail.com</div>
+                    <div class="p-3 bg-blue-50 rounded border border-blue-100 text-[10px]"><strong>Ümit Beyazşekeroğlu</strong><br>Business Controller - BPS Tax | Deloitte | ubeyazsekeroglu@deloitte.com</div>
+                </div></section>
             </div>
         </div>
 
         <!-- ================= SPOR PSİKOLOĞU MODU - TÜRKÇE ================= -->
         <div id="cv-sp-tr" class="cv-mode">
-            <div class="container-wrapper print-container max-w-4xl mx-auto bg-white shadow-2xl p-8 md:p-10 mb-4 border-t-8 border-blue-600">
+            <div class="print-container max-w-4xl mx-auto bg-white shadow-2xl p-8 md:p-12 mb-4 border-t-8 border-blue-600">
                 <header class="pb-4 mb-6 border-b-2 border-gray-100 flex flex-col md:flex-row items-center md:items-start gap-8">
                     <div class="flex-shrink-0"><div class="profile-img-container rounded-full"><img class="profile-preview hidden" src=""><div class="placeholder-text text-gray-400 text-[10px] text-center p-2 uppercase font-bold italic">FOTOĞRAF</div></div></div>
                     <div class="flex-grow text-center md:text-left">
@@ -198,7 +246,7 @@
                         </ul>
                     </div>
                     <div class="mb-4">
-                        <div class="flex justify-between items-baseline mb-0.5"><h3 class="text-[12px] font-bold text-gray-800">Psikolojik Performans Koçu</h3><span class="text-[11px] font-bold text-blue-600">01.2024 – Günümüz</span></div>
+                        <div class="flex justify-between items-baseline mb-0.5"><h3 class="text-[13px] font-bold text-gray-800">Psikolojik Performans Koçu</h3><span class="text-[11px] font-bold text-blue-600">01.2024 – Günümüz</span></div>
                         <ul class="list-disc ml-5 space-y-0.5 text-gray-700 cv-text-base">
                             <li>Profesyonel espor oyuncularına ve geleneksel sporculara, zihinsel güçlerini ve oyun içi karar verme becerilerini geliştirmeleri için bire bir psikolojik performans danışmanlığı sağlıyorum.</li>
                             <li>Performans kaygısı, odak yönetimi ve tükenmişliği (burnout) önleme konularında BDT ve mindfulness tekniklerinden yararlanıyorum.</li>
@@ -208,7 +256,7 @@
                 </section>
                 <section><h2 class="section-title">Eğitim Bilgileri</h2><p class="text-gray-800 font-bold text-[11px]">Yüksek Lisans: Marmara Üniv. / Egzersiz ve Spor Psikolojisi (GPA: 3.88)<br>Lisans: Ankara Yıldırım Beyazıt Üniv. / Psikoloji Bölümü (%100 İngilizce)</p></section>
             </div>
-            <div class="page-break container-wrapper print-container max-w-4xl mx-auto bg-white shadow-2xl p-8 md:p-10 mb-8">
+            <div class="page-break print-container max-w-4xl mx-auto bg-white shadow-2xl p-8 md:p-12 mb-8">
                 <section class="mb-6">
                     <h2 class="section-title">Eğitmen ve Atölye Kolaylaştırıcısı</h2>
                     <ul class="list-disc ml-5 space-y-1 text-gray-700 cv-text-base">
@@ -219,13 +267,18 @@
                 </section>
                 <section class="mb-6"><h2 class="section-title">Saha Görevlisi</h2><p class="text-[10px] italic text-gray-500 mb-1">10.2023 – 12.2023 | Hacettepe Üniv. Nüfus Etütleri Enstitüsü</p><p class="cv-text-base">UNFPA tarafından finanse edilen ulusal araştırmada veri toplama faaliyetlerini yürüttüm.</p></section>
                 <section class="mb-6">
-                    <h2 class="section-title">Sertifikalar ve Atölyeler</h2>
-                    <div class="grid grid-cols-1 gap-2 text-[10px]">
-                        <div class="p-2 border rounded"><strong>Spor Psikolojisi Süpervizyon Grubu | Dr. Seren Akıncı</strong><br>Sporcular için müdahale yöntemleri, vaka tartışmaları ve interdisipliner işbirliği stratejileri.</div>
-                        <div class="p-2 border rounded"><strong>Ekip Eğitimleri (Stres Yönetimi, İletişim, Takım Kültürü)</strong><br>S2G Esports & 8. Egzersiz ve Spor Psikolojisi Kongresi.</div>
-                    </div>
+                    <h2 class="section-title">Teknik Yetkinlikler</h2>
+                    <ul class="space-y-1.5 cv-text-base text-gray-700 max-w-xs">
+                        <li class="flex justify-between border-b pb-0.5"><span>Performans Koçluğu</span> <span class="rating-badge">5/5</span></li>
+                        <li class="flex justify-between border-b pb-0.5"><span>CBT & Mindfulness</span> <span class="rating-badge">5/5</span></li>
+                        <li class="flex justify-between border-b pb-0.5"><span>Ekip Dinamikleri</span> <span class="rating-badge">5/5</span></li>
+                        <li class="flex justify-between border-b pb-0.5"><span>Adobe Suite</span> <span class="rating-badge">4/5</span></li>
+                    </ul>
                 </section>
-                <div class="grid grid-cols-2 gap-4 mt-6"><section><h2 class="section-title">Beceriler</h2><p class="cv-text-base">CBT, Mindfulness, Mental Dayanıklılık, Performans Koçluğu.</p></section><section><h2 class="section-title">Diller</h2><p class="cv-text-base">Türkçe (Ana Dil), İngilizce (B2).</p></section></div>
+                <section><h2 class="section-title">Referanslar</h2><div class="grid grid-cols-2 gap-4">
+                    <div class="p-3 bg-blue-50 rounded border border-blue-100 text-[10px]"><strong>Özlem Yücel</strong><br>İç Eğitmen | psikologozlemyucel@gmail.com</div>
+                    <div class="p-3 bg-blue-50 rounded border border-blue-100 text-[10px]"><strong>Ümit Beyazşekeroğlu</strong><br>Business Controller - BPS Tax | Deloitte | ubeyazsekeroglu@deloitte.com</div>
+                </div></section>
             </div>
         </div>
 
@@ -273,13 +326,17 @@
                 </section>
                 <section class="mb-6"><h2 class="section-title uppercase">Field Staff</h2><p class="text-[10px] italic text-gray-500 mb-1 uppercase">10.2023 – 12.2023 | Hacettepe Institute of Population Studies</p><p class="cv-text-base">Conducted field research and data collection as a core staff member in a national study funded by UNFPA.</p></section>
                 <section class="mb-6">
-                    <h2 class="section-title uppercase">Certifications and Workshops</h2>
-                    <div class="grid grid-cols-1 gap-2 text-[10px] uppercase">
-                        <div class="p-2 border rounded"><strong>Sport Psychology Supervision Group | Dr. Seren Akıncı</strong><br>Practical skills in psychological intervention methods, case discussions, and expert experience sharing.</div>
-                        <div class="p-2 border rounded"><strong>Applied Trainings (Stress, Communication, Culture)</strong><br>S2G Esports & 8th Exercise and Sport Psychology Congress.</div>
-                    </div>
+                    <h2 class="section-title uppercase">Technical Skills</h2>
+                    <ul class="space-y-1.5 cv-text-base text-gray-700 max-w-xs">
+                        <li class="flex justify-between border-b pb-0.5"><span>Performance Coaching</span> <span class="rating-badge">5/5</span></li>
+                        <li class="flex justify-between border-b pb-0.5"><span>CBT & Mindfulness</span> <span class="rating-badge">5/5</span></li>
+                        <li class="flex justify-between border-b pb-0.5"><span>Adobe Creative Suite</span> <span class="rating-badge">4/5</span></li>
+                    </ul>
                 </section>
-                <div class="grid grid-cols-2 gap-4 mt-6"><section><h2 class="section-title uppercase">Skills</h2><p class="cv-text-base uppercase">CBT, Mindfulness, Mental Fortitude, Performance Coaching.</p></section><section><h2 class="section-title uppercase">Languages</h2><p class="cv-text-base uppercase">Turkish (Native), English (B2).</p></section></div>
+                <section><h2 class="section-title uppercase">References</h2><div class="grid grid-cols-2 gap-4">
+                    <div class="p-3 bg-blue-50 rounded border border-blue-100 text-[10px]"><strong>Özlem Yücel</strong><br>Internal Trainer | psikologozlemyucel@gmail.com</div>
+                    <div class="p-3 bg-blue-50 rounded border border-blue-100 text-[10px]"><strong>Ümit Beyazşekeroğlu</strong><br>Business Controller - BPS Tax | Deloitte | ubeyazsekeroglu@deloitte.com</div>
+                </div></section>
             </div>
         </div>
 
@@ -348,3 +405,5 @@
     </script>
 </body>
 </html>
+
+```
